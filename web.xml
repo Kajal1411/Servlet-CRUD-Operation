@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>ServletCRUD</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+
+  <context-param>
+        <param-name>username</param-name>
+        <param-value>hr</param-value>
+  </context-param>
+
+  <context-param>
+        <param-name>password</param-name>
+        <param-value>pass</param-value>
+  </context-param>
+  
+ <servlet>
+ <servlet-name>Insert</servlet-name>
+ <servlet-class>myPack.Insert</servlet-class>
+ </servlet> 
+ 
+ <servlet-mapping>
+  <servlet-name>Insert</servlet-name>
+  <url-pattern>/Insert</url-pattern>
+ </servlet-mapping>
+ 
+ 
+ <servlet>
+ <servlet-name>Update</servlet-name>
+ <servlet-class>myPack.Update</servlet-class>
+ </servlet> 
+ 
+ <servlet-mapping>
+  <servlet-name>Update</servlet-name>
+  <url-pattern>/Update</url-pattern>
+ </servlet-mapping>
+ 
+ 
+ <servlet>
+ <servlet-name>Delete</servlet-name>
+ <servlet-class>myPack.Delete</servlet-class>
+ </servlet> 
+ 
+ <servlet-mapping>
+  <servlet-name>Delete</servlet-name>
+  <url-pattern>/Delete</url-pattern>
+ </servlet-mapping>
+ 
+ 
+ <servlet>
+ <servlet-name>Search</servlet-name>
+ <servlet-class>myPack.Search</servlet-class>
+ </servlet> 
+ 
+ <servlet-mapping>
+  <servlet-name>Search</servlet-name>
+  <url-pattern>/Search</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>Display</servlet-name>
+ <servlet-class>myPack.Display</servlet-class>
+ </servlet> 
+ 
+ <servlet-mapping>
+  <servlet-name>Display</servlet-name>
+  <url-pattern>/Display</url-pattern>
+ </servlet-mapping>
+  
+  
+<listener>
+<listener-class>myPack.Event</listener-class>
+</listener>
+  
+</web-app>
